@@ -6,16 +6,13 @@ import Articulos from './components/paginas/Articulos.js'
 import Items from './components/paginas/Items.js'
 
 
-<<<<<<< HEAD
 function App() {
 
 
   return ( //JSX
-=======
-function App() { //JSX
-  return (
->>>>>>> 1ca7014991b58b62709df75d78eeedf1a3ae6eda
     <div className="App">
+      <ItemListContainer greeting={ "Bienvenidos a la casa de los Accesorios de Vehiculos" } />
+      <hr/>
       <Router>
         <NavBar></NavBar>
         <Switch>
