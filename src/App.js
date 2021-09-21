@@ -17,9 +17,10 @@ function App() {
           <Route path='/' exact component={Inicio}/>
           <Route path='/Articulos' component={Articulos}/>
           <Route path='/Items' component={Items}/>
+          <CartWidget />
         </Switch>
       </Router>
-      
+
     </div>
   );
 }

@@ -1,4 +1,5 @@
-import React from 'react'
+import './Inicio.css';
+import React from 'react';
 
 const Inicio = () => {
     return (
