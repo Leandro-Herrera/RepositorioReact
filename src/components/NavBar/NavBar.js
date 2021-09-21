@@ -1,51 +1,34 @@
-import '/NavBar.css';
+import React from 'react'
+import {Link} from 'react-router-dom'
 
-import React, { useState } from 'react';
-import {Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem,
-  NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem,
-  NavbarText} from 'reactstrap';
-
-const NavBar = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
-
-  return (
-    <div>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-            </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                home
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  productos
-                </DropdownItem>
-                <DropdownItem>
-                  consultenos
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
-          <NavbarText>Jorge Herrera Accesorios</NavbarText>
-        </Collapse>
-      </Navbar>
-    </div>
-  );
+const NavBar = () => {
+    return (
+        <div>
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div className="container-fluid">
+                <Link to='/'>
+                    <img src='img/titulo.png' width='70'></img>
+                </Link>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul className="navbar-nav mx-auto">
+                    <li className="nav-item">
+                        <Link className="nav-link " to='/'>Inicio</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link " to='/Articulos'>Articulos</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link " to='/Items'>Items</Link>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </nav>
+        </div>
+    )
 }
 
-export default NavBar;
+export default NavBar
