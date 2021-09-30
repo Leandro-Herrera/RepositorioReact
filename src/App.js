@@ -7,6 +7,8 @@ import Items from './components/paginas/Items'
 import ItemListContainer from './components/ItemListContainer'
 import CartWidget from "./components/CartWidget"
 import Contador from './components/paginas/Contador'
+import ItemListContainer from './components/itemDetailConteiner'
+import itemDetailConteiner from './components/itemDetailConteiner';
 
 function App() {
 
@@ -17,6 +19,7 @@ function App() {
       <hr/>
       <Router>
         <NavBar></NavBar>
+        <itemDetailConteiner />
         <Switch>
           <Route path='/' exact component={Inicio}/>
           <Route path='/Articulos' component={Articulos}/>
