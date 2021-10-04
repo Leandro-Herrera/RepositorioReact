@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar';
 import Inicio from './components/paginas/inicio';
 import Items from './components/paginas/items';
-import ItemListContainer from './components/itemListContainer';
+import ItemListContainer from './components/paginas/itemListContainer';
 import CartWidget from './components/cartWidget';
 import {Contador} from './components/paginas/contador';
-import ItemListContainer from './component/itemDetailConteiner';
+import {ItemListContainer} from './components/paginas/itemListContainer';
 import ItemDetailConteiner from '.component/itemDetailConteiner';
 
 function App() {

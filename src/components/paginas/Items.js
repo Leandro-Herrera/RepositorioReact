@@ -1,4 +1,4 @@
- import './Items.css'
+ import './items.css'
  import React from 'react'
  
 
@@ -9,10 +9,12 @@
                 <img src={'../../img/jaulaCromada.jpg'} alt="imagen" />
             </div>
             <div className="container_data_items">
-                <h3>{prop.title}</h3>
-                <p>{prop.text}</p>
-                <p>$ {prop.price}</p>
-                <button>{prop.button}</button>
+                <ul>
+                    <li><h3>{prop.title}</h3></li>
+                    <li><p>{prop.text}</p></li>
+                    <li><p>$ {prop.price}</p></li>
+                    <li><button>{prop.button}</button></li>
+                </ul>
             </div>
         </div>
      )
