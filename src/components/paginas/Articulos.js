@@ -1,6 +1,4 @@
-import './Articulos.css';
-import React from 'react';
-import Items from './Items';
+
 
 
 const Articulos = () => {
@@ -16,4 +14,4 @@ const Articulos = () => {
     )
 }
 
-export default Articulos
+//sin uso

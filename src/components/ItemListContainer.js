@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import Articulos from './paginas/Articulos'
 
 
 export default function ItemListContainer() {

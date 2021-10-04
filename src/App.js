@@ -1,14 +1,13 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import NavBar from './components/NavBar/NavBar'
-import Inicio from './components/paginas/Inicio'
-import Articulos from './components/paginas/Articulos'
-import Items from './components/paginas/Items'
-import ItemListContainer from './components/ItemListContainer'
-import CartWidget from "./components/CartWidget"
-import Contador from './components/paginas/Contador'
-import ItemListContainer from './components/itemDetailConteiner'
-import itemDetailConteiner from './components/itemDetailConteiner';
+import NavBar from './components/NavBar/NavBar';
+import Inicio from './components/paginas/inicio';
+import Items from './components/paginas/items';
+import ItemListContainer from './components/itemListContainer';
+import CartWidget from './components/cartWidget';
+import {Contador} from './components/paginas/contador';
+import ItemListContainer from './component/itemDetailConteiner';
+import ItemDetailConteiner from '.component/itemDetailConteiner';
 
 function App() {
 
@@ -19,13 +18,13 @@ function App() {
       <hr/>
       <Router>
         <NavBar></NavBar>
-        <itemDetailConteiner />
+        <ItemDetailConteiner />
         <Switch>
           <Route path='/' exact component={Inicio}/>
-          <Route path='/Articulos' component={Articulos}/>
-          <Route path='/Items' component={Items}/>
-          <Contador/>
-          <CartWidget />
+          <Route path='/itemListContainer' component={ItemListContainer}/>
+          <Route path='/items' component={Items}/>
+          <Contador stock={15} initial={1}/>
+          <CartWidget/>
         </Switch>
       </Router>
 

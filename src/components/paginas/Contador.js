@@ -1,26 +1,37 @@
 import React,{useState} from 'react'
 
-export default function Contador(prop) {
-    const [items, setItems] = useState(0)
-    const [stock, setStock] = useState(15)
-    const [blockButton, setBlockButton] = useState(false)
+
+export default function Contador({stock, initial}) {
+    const [items, setItems] = useState(initial)
 
     const sumar = () => {
         if(items < stock) {
             setItems(items +1)
-        }else {
-            setBlockButton(true)
         }
     }
     const restar = () => {
         setItems(items -1)
     }
     return (
-        <div>
-            <button disabled={blockButton} onClick={sumar}>+</button>
-            {items}
-            <button onClick={restar}>-</button>
+        <div className="contenedor contador">
+          <div className="contenedor boton">
+            <Button
+              onClick={restar}
+              disabled={items <= initial}
+              className="btn btn-secondary"
+            >
+              -
+            </Button>
+    
+            <span className="texto boton">{items}</span>
+    
+            <Button
+              onClick={sumar}
+              disabled={items >= stock}
+              className="btn btn-secondary"
+            >+</Button>
+          </div>
         </div>
-    )
+      );
 }
 
