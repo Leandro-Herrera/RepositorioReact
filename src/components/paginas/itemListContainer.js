@@ -74,6 +74,6 @@ const ItemListContainer = () => {
         })
     },[]);
 
-    return <ItemList key={items.id} title={items.title} price={items.price}/>
-};
+    return <ItemList items={items} />;
+}
 export default ItemListContainer

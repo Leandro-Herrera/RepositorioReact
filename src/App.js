@@ -13,8 +13,6 @@ function App() {
 
   return ( //JSX
     <div className="App">
-      <ItemListContainer greeting={ "Bienvenidos a la casa de los Accesorios de Vehiculos" } />
-      <hr/>
       <Router>
         <NavBar/>
         <ItemDetailConteiner />
@@ -26,7 +24,8 @@ function App() {
           <CartWidget/>
         </Switch>
       </Router>
-
+      <ItemListContainer greeting={ "Bienvenidos a la casa de los Accesorios de Vehiculos" } />
+      <hr/>
     </div>
   );
 }
