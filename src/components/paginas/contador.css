@@ -1,0 +1,21 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+.texto-boton {
+  padding: 10px;
+}
+
+.contenedor-contador {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+}
+
+.contenedor-boton {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

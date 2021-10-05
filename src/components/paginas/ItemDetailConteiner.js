@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import ItemDetail from './paginas/itemsDetail'
+import ItemDetail from './ItemsDetail'
 
-function itemDetailConteiner() {
-    const [infoItems, setInfoItems] = useState()
+function ItemDetailConteiner() {
+    const [infoItems, setItems] = useState()
     const getItem = new Promise((resolve) => {
         setTimeout(() => {
             const mockItems = {
@@ -10,7 +10,9 @@ function itemDetailConteiner() {
                 title:"Paragolpes",
                 text:"Plastico negro",
                 button:"Agregar al carrito",
-                stock:"15"
+                stock:"15",
+                price:"5000",
+                img: "/img/paragolpesNegros.jpg"
             }
             resolve(mockItems)
         }, 2000)
@@ -18,7 +20,7 @@ function itemDetailConteiner() {
 
     useEffect(() => {
         getItem.then(response => {
-            SetInfoItems(response)
+            setItems(response)
         })
     }, [])
     
@@ -30,4 +32,4 @@ function itemDetailConteiner() {
     )
 }
 
-export default itemDetailConteiner
+export default ItemDetailConteiner

@@ -1,4 +1,3 @@
-import './Inicio.css';
 import React from 'react';
 
 const Inicio = () => {
