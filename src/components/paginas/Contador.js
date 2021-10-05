@@ -2,16 +2,14 @@ import React,{useState} from 'react';
 
 function Contador({stock, initial}) {
   const [items, setItems] = useState(initial);
-  const [stock, setStock] = useState(15);
 
   const sumar = () => {
       if(items < stock) {
         setItems(items +1);
-        setStock();
       }
   }
   const restar = () => {
-    if (items > stock) {
+    if (items > initial) {
       setItems(items - 1);
     }
   }
@@ -32,4 +30,4 @@ function Contador({stock, initial}) {
   );
 }
 
-export default Contador()
+export default Contador;
