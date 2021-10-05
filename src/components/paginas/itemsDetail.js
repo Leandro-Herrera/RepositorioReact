@@ -8,6 +8,7 @@ function ItemDetail(props) {
             <img src={"/img/paragolpesCromado.jpg"} />
          </div>
          <div className="detalle-items">
+            <img src={props.data?.img} />
             <h2>{props.data?.title}</h2>
             <p>{props.data?.text}</p>
             <p>$ {props.data?.price}</p>
