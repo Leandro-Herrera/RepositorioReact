@@ -1,12 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar';
-import Inicio from './components/paginas/Inicio';
-import Item from './components/paginas/Items';
 import CartWidget from './components/paginas/CartWidget';
-import Contador from './components/paginas/Contador';
+import Contador from './components/paginas/ItemCount';
 import ItemListContainer from './components/paginas/ItemListContainer';
-import ItemDetailConteiner from './components/paginas/ItemDetailConteiner';
+import ItemDetailContainer from './components/paginas/ItemDetailContainer';
 
 function App() {
 
@@ -15,11 +13,11 @@ function App() {
     <div className="App">
       <Router>
         <NavBar/>
-        <ItemDetailConteiner />
+        <ItemDetailContainer />
         <Switch>
-          <Route path='/' exact component={Inicio}/>
-          <Route path='/itemListContainer' component={ItemListContainer}/>
-          <Route path='/items' component={Item}/>
+          <Route path='/' exact component={ItemListContainer}/>
+          <Route path='/category/:id' component={ItemListContainer}/>
+          <Route path='/item/:id' component={ItemDetailContainer}/>
           <Contador stock={15} initial={1}/>
           <CartWidget/>
         </Switch>
