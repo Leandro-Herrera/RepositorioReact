@@ -2,17 +2,20 @@ import React, {useState, useEffect} from 'react'
 import ItemDetail from './ItemsDetail'
 
 function ItemDetailConteiner() {
-    const [infoItems, setItems] = useState()
+    const [infoItems, setItems] = useState();
+    const {Items} = useParams();
+
     const getItem = new Promise((resolve) => {
         setTimeout(() => {
             const mockItems = {
                 id: "1",
                 title:"Paragolpes",
-                text:"Plastico negro",
+                adress: "/category/Paragolpes",
+                text:"Paragolpes de Plastico negro",
                 button:"Agregar al carrito",
                 stock:"15",
                 price:"5000",
-                img: "/img/paragolpesNegro.jpg"
+                img: "/img/paragolpesNegros.jpg"
             }
             resolve(mockItems);
         }, 2000);
@@ -20,9 +23,9 @@ function ItemDetailConteiner() {
 
     useEffect(() => {
         getItem.then(response => {
-            setItems(response)
+            Items ? setItems(respuesta.find((i) => i.id === Items)) : setItems(response)
         })
-    }, [])
+    }, [Items])
     
     return (
         <div className="detail-container">

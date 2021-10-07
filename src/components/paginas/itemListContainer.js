@@ -4,13 +4,15 @@ import ItemList from './ItemList';
 
 const ItemListContainer = () => {
     const [items, setItems] = useState([]);
-    
+    const {Id} = useParams();
+
     useEffect(() => {
         const mockItems = [
             {
                 id: "1",
                 title:"Paragolpes",
-                text:"Plastico negro",
+                adress: "/category/Paragolpes",
+                text:"Paragolpes de Plastico negro",
                 button:"Agregar al carrito",
                 stock:"15",
                 price:"5000",
@@ -19,7 +21,8 @@ const ItemListContainer = () => {
             {
                 id: "2",
                 title:"Paragolpes",
-                text:"Cromado",
+                adress: "/category/Paragolpes",
+                text:"Paragolpes Cromado",
                 button:"Agregar al carrito",
                 stock:"10",
                 price:"8000",
@@ -28,7 +31,8 @@ const ItemListContainer = () => {
             {
                 id: "3",
                 title:"Lonas",
-                text:"Tensadas",
+                adress: "/category/Lonas",
+                text:"lonas Tensadas",
                 button:"Agregar al carrito",
                 stock:"13",
                 price:"1500",
@@ -36,8 +40,9 @@ const ItemListContainer = () => {
             },
             {
                 id: "4",
-                title:"lonas",
-                text:"Rigidas",
+                title:"Lonas",
+                adress: "/category/Lonas",
+                text:"lonas Rigidas",
                 button:"Agregar al carrito",
                 stock:"14",
                 price:"3500",
@@ -46,7 +51,8 @@ const ItemListContainer = () => {
             {
                 id:"5",
                 title:"Jaula",
-                text:"Fibra de Carbono",
+                adress: "/category/Jaula",
+                text:"Jaula de Fibra de Carbono",
                 button:"Agregar al carrito",
                 stock:"5",
                 price:"4000",
@@ -55,7 +61,8 @@ const ItemListContainer = () => {
             {
                 id:"6",
                 title:"Jaula",
-                text:"Cromada",
+                adress: "/category/Jaula",
+                text:"Jaula Cromada",
                 button:"Agregar al carrito",
                 stock:"8",
                 price:"6000",
@@ -68,11 +75,10 @@ const ItemListContainer = () => {
             }, 2000);
         })
 
-
         getItem.then((respuesta) =>{
-            setItems(respuesta);
+            Id ? setItems(respuesta.filter((i) => i.category === Id)) : setItems(respuesta);
         })
-    },[]);
+    }, [Id]);
 
     return <ItemList items={items} />;
 }
