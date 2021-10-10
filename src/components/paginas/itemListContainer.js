@@ -1,38 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import ItemList from './ItemList';
-
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
     const [items, setItems] = useState([]);
-    const {Id} = useParams();
+    const {id} = useParams();
 
     useEffect(() => {
         const mockItems = [
             {
                 id: "1",
-                title:"Paragolpes",
-                adress: "/category/Paragolpes",
-                text:"Paragolpes de Plastico negro",
-                button:"Agregar al carrito",
-                stock:"15",
-                price:"5000",
-                img: "/img/paragolpesNegros.jpg"
-            },
+                title: "Paragolpes",
+                category: "paragolpes",  
+                text: "Paragolpes de Plastico negro",
+                button: "Agregar al carrito",
+                stock: 15,
+                price: 5000,
+                img: "/img/paragolpesNegros.jpg",
+             },
             {
                 id: "2",
                 title:"Paragolpes",
-                adress: "/category/Paragolpes",
+                category: "paragolpes",  
                 text:"Paragolpes Cromado",
                 button:"Agregar al carrito",
-                stock:"10",
-                price:"8000",
+                stock: 10,
+                price: 8000,
                 img: "/img/paragolpesCromado.jpg"
             },
             {
                 id: "3",
                 title:"Lonas",
-                adress: "/category/Lonas",
-                text:"lonas Tensadas",
+                category: "lonas",  
+                text:"Lonas Tensadas",
                 button:"Agregar al carrito",
                 stock:"13",
                 price:"1500",
@@ -41,8 +41,8 @@ const ItemListContainer = () => {
             {
                 id: "4",
                 title:"Lonas",
-                adress: "/category/Lonas",
-                text:"lonas Rigidas",
+                category: "lonas",
+                text:"Lonas Rigidas",
                 button:"Agregar al carrito",
                 stock:"14",
                 price:"3500",
@@ -51,7 +51,7 @@ const ItemListContainer = () => {
             {
                 id:"5",
                 title:"Jaula",
-                adress: "/category/Jaula",
+                category: "jaulas",
                 text:"Jaula de Fibra de Carbono",
                 button:"Agregar al carrito",
                 stock:"5",
@@ -61,7 +61,7 @@ const ItemListContainer = () => {
             {
                 id:"6",
                 title:"Jaula",
-                adress: "/category/Jaula",
+                category: "jaulas",
                 text:"Jaula Cromada",
                 button:"Agregar al carrito",
                 stock:"8",
@@ -76,9 +76,9 @@ const ItemListContainer = () => {
         })
 
         getItem.then((respuesta) =>{
-            Id ? setItems(respuesta.filter((i) => i.category === Id)) : setItems(respuesta);
+            id ? setItems(respuesta.filter((i) => i.category === id)) : setItems(respuesta);
         })
-    }, [Id]);
+    }, [id]);
 
     return <ItemList items={items} />;
 }
