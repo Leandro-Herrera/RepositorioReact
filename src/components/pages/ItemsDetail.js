@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
+import WrapperContext from "../../context/wrapperContext";
 
 function ItemDetail(props) {
 
@@ -26,6 +27,7 @@ function ItemDetail(props) {
             <p>$ {props.data?.price}</p>
             {!isAdded ? (
                <>
+                  <WrapperContext />
                   <ItemCount onAdd={onAdd} onLess={onLess} quantity={items} />
                   <button onClick={addToCart}>Agregar al Carrito</button>
                </>

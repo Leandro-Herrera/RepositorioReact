@@ -1,11 +1,8 @@
-import { CartContext } from '../context/CartContext'
+import { CartContext } from './../context/CartContext'
 
 const Product = (item) => {
   const {id, title, stock, price, img} = item
   const {addItem, isInCart, removeItem} = useContext(CartContext)
-  const {title, stock, price, color} = item
-  const {addItem, removeItem} = useContext(CartContext)
-
   const handleOnAdd = count => addItem(item, count)
 
   return (

@@ -4,10 +4,9 @@ import NavBar from './components/NavBar/NavBar';
 import Contador from './components/pages/ItemCount';
 import ItemListContainer from './components/pages/ItemListContainer';
 import ItemDetailContainer from './components/pages/ItemDetailContainer';
-import 'bootstrap / dist / css / bootstrap.min.css' ;
 import Context from './context/wrapperContext';
-import Cart from './components/pages/CartWidget';
-import Products from './components/pages/Products';
+import Cart from './components/pages/Cart';
+import Products from './components/pages/Product'
 
 function App() {
 
@@ -23,10 +22,8 @@ function App() {
           <Route path='/category/:id' component={ItemListContainer}/>
           <Route path='/item/:id' component={ItemDetailContainer}/>
           <Contador stock={15} initial={1}/>
-          <Route path="/products"><Products />
-          </Route>
-          <Route path="/cart"><Cart />
-          </Route>
+          <Route path="/products"><Products /></Route>
+          <Route path="/ItemsDetail"><Cart /></Route>
         </Switch>
       </Router>
       <ItemListContainer greeting={ "Bienvenidos a la casa de los Accesorios de Vehiculos" } />

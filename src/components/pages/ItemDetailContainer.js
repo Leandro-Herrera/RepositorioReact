@@ -75,7 +75,7 @@ function ItemDetailConteiner() {
 
     useEffect(() => {
         getItem.then(response => {
-            id ? setItems(respuesta.find((i) => i.id === id)) : setItems(response)
+            id ? setItems(response.find((i) => i.id === id)) : setItems(response)
         })
     }, [id])
     

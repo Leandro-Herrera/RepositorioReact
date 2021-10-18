@@ -9,8 +9,8 @@ export const CartContextProvider = ({ children }) => {
     const [price, setPrice] = useState(0)
 
     useEffect(() => {
-        setTotal(handlerTotal())
-        setPrice(handlerTotalPrice())
+        setTotal()
+        setPrice()
     }, [cartItems])
 
     const addItem = (item, count) => {
@@ -32,7 +32,7 @@ export const CartContextProvider = ({ children }) => {
     const removeItem = (item) => {
         if (isInCart(item)) {
             const cartElements = cartItems.filtrer(element => element.item.id !== item.id) || []
-            serCartItems([...cartElements])
+            setCartItems([...cartElements])
         }
     }
 
