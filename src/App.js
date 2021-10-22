@@ -1,36 +1,40 @@
+import { createContext } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import './App.css';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import NavBar from './components/NavBar/NavBar';
-import Contador from './components/pages/ItemCount';
-import ItemListContainer from './components/pages/ItemListContainer';
-import ItemDetailContainer from './components/pages/ItemDetailContainer';
-import Context from './context/wrapperContext';
-import Cart from './components/pages/Cart';
-import Products from './components/pages/Product'
-
-function App() {
+import ItemListContainer from '../src/component/ItemListContainer';
+import NavBar from './component/NavBar';
+import ItemDetailContainer from './component/ItemDetailContainer';
+import Cart from './component/Cart';
+import CartContextProvider from './component/CartContext';
 
 
-  return ( //JSX
-    <div className="App">
-      <Router>
-        <Context.Provider value={{name: 'Leandro', color: 'primary'}}>
-          <NavBar/>
-        </Context.Provider>
-        <Switch>
-          <Route path='/' exact component={ItemListContainer}/>
-          <Route path='/category/:id' component={ItemListContainer}/>
-          <Route path='/item/:id' component={ItemDetailContainer}/>
-          <Contador stock={15} initial={1}/>
-          <Route path="/products"><Products /></Route>
-          <Route path="/ItemsDetail"><Cart /></Route>
-        </Switch>
-      </Router>
-      <ItemListContainer greeting={ "Bienvenidos a la casa de los Accesorios de Vehiculos" } />
-      <hr/>
-    </div>
+
+export const contextApp = createContext('Dato') 
+
+function App (){
+
+  return(
+
+    <CartContextProvider>
+      <Router> 
+        <div className = "root"> 
+        <h1>Mocho Accesorios de vehiculos</h1>
+      <NavBar/> 
+      <Switch> 
+        <Route exact path = '/'> 
+          <ItemListContainer greeting = " Accesorios "/> 
+        </Route>
+        <Route exact path='/consola/:idConsola' component= {ItemListContainer}/>
+        <Route exact path = '/item/:idItem' component = {ItemDetailContainer}/> 
+        <Route exact path = '/Cart' component = {Cart} />
+      </Switch>
+     </div>
+     </Router>
+   
+    </CartContextProvider>
   );
 }
 
-export default App;
 
+export default App;

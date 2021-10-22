@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext } from './../context/cartContext';
 import ItemsDetail from './ItemsDetail';
+import CartWidget from './CartWidget';
 
 const Cart = () => {
     const {cartItems, total, price, clear} = useContext(CartContext)
@@ -9,7 +10,7 @@ const Cart = () => {
         <div className="">
 
             <div>
-                <h2><img src='/img/carrito.png' width="25px" height="22px"></img>Carrito</h2>
+                <CartWidget/>
                 <b>PRODUCTOS: {total}</b>
                 <b>TOTAL: ${price}</b>
             </div>            

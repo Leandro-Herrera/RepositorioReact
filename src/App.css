@@ -1,38 +1,134 @@
-.App {
+h1{
   text-align: center;
+  padding: 1rem;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2{
+  text-align: center;
+  padding: 1rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/*para darle color al fondo del menu*/
+.bg-marino{
+  background-color: #17202A;
+  
   }
-}
+  .root{
+    background-color: #F0F3F4;
+  }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+  .CarritoCompras{
+    width: 20%;
+    margin: auto 1rem;
+  }
+  .contadorCarrito label{
+   display: block;
+   text-align: center;
+   font-size: 2rem;
+   margin: 1rem;
+  }
+  .contadorCarrito button{
+   display: inline-block;
+    width: 5rem;
+    height: 2rem;
+    margin: auto auto;
+    border-radius: 0.4rem;
+    border: none;
+   }
+   .contadorCarrito button:hover{
+     border: 1px solid red;
+   }
+  .contadorCarrito{
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+  }
+  .BotonItemCount{
+    text-align: center;
+    margin: 1rem;
+  }
+ 
+  .BotonFinalizarSeguir button{
+    margin: 1rem;
+    padding: 0.5rem;
+    border: none;
+  }
+  .BotonFinalizarSeguir button:hover{
+    border: 1px solid red;
+  }
+
+  .cardJuegos{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .cardJuego{
+    margin: 1rem;
+  }
+  .cardNombre{
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .detalleJuegos{
+    text-align: center;
+  }
+  .imagenDetalle{
+    width: 50%;
+  }
+  .detalleJuegos p{
+    margin: 1rem;
+    line-height: rem;
+  }
+  .cardJuegoDetalle{
+    margin: 1rem auto;
+  }
+  .tabla{
+    width: 60%;
+  }
+  .tabla img{
+    padding: 0.6rem;
+  }
+  .tabla button{
+   margin: auto 0.5rem;
+  }
+  .tabla th{
+    width: 30%;
+   
+  }
+  
+  .totalCompra{
+    margin: 3rem auto;
+  }
+ .detallesCarrito{
+   display: flex;
+   justify-content: space-evenly;
+ }
+ .detallesCarrito p{
+  margin: auto auto;
+}
+ .detallesCarrito img{ 
+ width: 15%;
+ display: block;
+ margin: auto auto;
+}
+.carrito{
+  margin: 2rem;
+}
+.botonesCarrito button{
+  margin: 1rem;
+}
+.categoriasMenu{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h3{
+  display: inline-block;
+  font-size: 1.5rem;
+  background-color: white;
+  padding: 0.2rem;
+  border-radius: 1rem;
+  color: black;
+  
 }
